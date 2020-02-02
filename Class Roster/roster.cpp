@@ -25,7 +25,8 @@ int main() {
 	
 	
 
-	test.printDaysInCourse("test2");
+
+	test.printByDegreeProgram(2);
 	
 
 	return 0;
@@ -71,6 +72,7 @@ void Roster::printAll() {
 		
 	}
 }
+
 void Roster::printDaysInCourse(string studentID) {
 	bool idExist = false;
 	double total = 0.0;
@@ -87,3 +89,22 @@ void Roster::printDaysInCourse(string studentID) {
 		cout << "Student ID was not found.";
 	}
 }
+
+void Roster::printInvalidEmails() {
+	for (int i = 0; i < 5; i++) {
+		bool valid = true;
+		string curEmail = classRosterArray[i]->getEmailAddress();
+
+
+	}
+}
+
+void Roster::printByDegreeProgram(int degreeProgram) {
+	for (int i = 0; i < 5; i++) {
+		if (degreeProgram == classRosterArray[i]->getDegreeType()) {
+			classRosterArray[i]->print();
+		}
+	}
+}
+
+

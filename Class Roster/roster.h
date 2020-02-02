@@ -13,9 +13,8 @@ public:
 	void remove(string studentID);
 	void printAll();
 	void printDaysInCourse(string studentID);
-	//void printByDegreeProgram(int degreeProgram);
-	//void printInvalidEmails();
-	//
+	void printInvalidEmails();
+	void printByDegreeProgram(int degreeProgram);
 	//~Roster();
 	int indexCounter = 0;
 	Student* classRosterArray[5];

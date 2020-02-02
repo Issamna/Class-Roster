@@ -82,19 +82,25 @@ void Student::setDegreeType(Degree degreeType) {
 }
 
 void Student::print() {
-
-
 	cout << getStudentID() << "\t";
-	cout << getFirstName() << "\t";
-	cout << getLastName() << "\t";
-	cout << getEmailAddress() << "\t";
-	cout << getAge() << "\t";
-	cout << daysToComplete[0] << " " << daysToComplete[1] << " " << daysToComplete[2] << " " << "\t";
-	cout << getDegreeType() << "\t";
+	cout << "First Name: " << getFirstName() << "\t";
+	cout << "Last Name: " << getLastName() << "\t";
+	cout << "Age: " << getAge() << "\t";
+	cout << "daysInCourse: {" << getDaysToComplete()[0] << ", " << getDaysToComplete()[1] << ", " << getDaysToComplete()[2] << "}" << "\t";
+	
+	if (getDegreeType() == 0) {
+		cout << "SECURITY\n";
+	}
+	else if (getDegreeType() == 1) {
+		cout << "NETWORKING\n";
+	}
+	else if (getDegreeType() == 2) {
+		cout << "SOFTWARE\n";
+	}
 }
 
 Degree Student::getDegreeProgram() {
-	return degreeType;
+	return Degree();
 }
 /*
 int main() {

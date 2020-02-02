@@ -1,16 +1,12 @@
 
 #include <iostream>
-#include <sstream>
+//#include <sstream>
 #include "roster.h"
 using namespace std;
 
 int main() {
-	cout << "Class Roster Program \n ";
-	int test[3] = { 1,2,3 };
-	Student t1("A1", "John", "Smith", "John1989@gm ail.com", 22, test, SECURITY);
-	t1.print();
-	securityStudent t5("A1", "John", "Smith", "John1989@gm ail.com", 22, test, SECURITY);
-	t5.print();
+	//cout << "Class Roster Program \n ";
+	
 
 
 	const string studentData[] =
@@ -19,7 +15,15 @@ int main() {
 	"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
 	"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
 	"A5,Issam,Ahmed,iahme11@wgu.edu,31,31,29,30,SOFTWARE"};
-
+	Roster test;
+	
+	test.add("test1", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SECURITY);
+	test.add("test2", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SOFTWARE);
+	test.add("test3", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SOFTWARE);
+	test.add("test4", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, NETWORKING);
+	test.add("test5", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SECURITY);
+	
+	test.printAll();
 	return 0;
 }
 
@@ -55,3 +59,8 @@ void Roster::remove(string studentID) {
 	}
 }
 
+void Roster::printAll() {
+	for (int i = 0; i < 5; i++) {
+		classRosterArray[i]->print();
+	}
+}

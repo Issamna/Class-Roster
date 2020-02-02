@@ -96,4 +96,10 @@ void Student::print() {
 Degree Student::getDegreeProgram() {
 	return degreeType;
 }
-
+/*
+int main() {
+	int test[3] = { 1,2,3 };
+	Student t1("A1", "John", "Smith", "John1989@gm ail.com", 22, test, SECURITY);
+	return 0;
+}
+*/

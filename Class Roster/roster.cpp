@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <sstream>
 #include "roster.h"
@@ -5,5 +6,52 @@ using namespace std;
 
 int main() {
 	cout << "Class Roster Program \n ";
+	int test[3] = { 1,2,3 };
+	Student t1("A1", "John", "Smith", "John1989@gm ail.com", 22, test, SECURITY);
+	t1.print();
+	securityStudent t5("A1", "John", "Smith", "John1989@gm ail.com", 22, test, SECURITY);
+	t5.print();
+
+
+	const string studentData[] =
+	{ "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
+	"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
+	"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
+	"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
+	"A5,Issam,Ahmed,iahme11@wgu.edu,31,31,29,30,SOFTWARE"};
+
 	return 0;
 }
+
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degreeType) {
+	int inDaysToComplete[3] = { daysInCourse1 , daysInCourse2, daysInCourse3};
+	if (degreeType == SECURITY) {
+		classRosterArray[indexCounter] = new securityStudent(studentID, firstName, lastName, emailAddress, age, inDaysToComplete, degreeType);
+		indexCounter++;
+	}
+	else if (degreeType == NETWORKING) {
+		classRosterArray[indexCounter] = new networkStudent(studentID, firstName, lastName, emailAddress, age, inDaysToComplete, degreeType);
+		indexCounter++;
+	}
+	else if (degreeType == SOFTWARE) {
+		classRosterArray[indexCounter] = new softwareStudent(studentID, firstName, lastName, emailAddress, age, inDaysToComplete, degreeType);
+		indexCounter++;
+	}
+	else {
+		cout << "Degree type not registered yet";
+	}
+};
+
+void Roster::remove(string studentID) {
+	bool idExist = false;
+	for (int i = 0; i < 5; i++) {
+		if (classRosterArray[i] != NULL && studentID == classRosterArray[i]->getStudentID()) {
+			idExist = true;
+			classRosterArray[i] = nullptr;
+		}
+	}
+	if (!idExist) {
+		cout << "Student ID was not found.";
+	}
+}
+

@@ -1,4 +1,4 @@
-#pragma once
+
 #include <iostream>
 #include <string>
 #include "networkStudent.h"
@@ -9,12 +9,14 @@ using namespace std;
 
 class Roster {
 public:
-	//void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degreeProgram);
+	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degreeType);
+	void remove(string studentID);
 	//void printAll();
 	//void printByDegreeProgram(int degreeProgram);
 	//void printDaysInCourse(string studentID);
 	//void printInvalidEmails();
-	//void remove(string studentID);
+	//
 	//~Roster();
-	//Student* classRosterArray[5] = { nullptr, nullptr, nullptr, nullptr, nullptr };
+	int indexCounter = 0;
+	Student* classRosterArray[5];
 };

@@ -8,6 +8,7 @@
 
 class networkStudent : public Student {
 public:
+	using Student::Student;
 	virtual Degree getDegreeProgram();
 
 private:

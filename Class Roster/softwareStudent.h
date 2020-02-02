@@ -8,6 +8,7 @@
 
 class softwareStudent : public Student {
 public:
+	using Student::Student;
 	virtual Degree getDegreeProgram();
 
 private:

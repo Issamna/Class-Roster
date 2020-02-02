@@ -18,12 +18,16 @@ int main() {
 	Roster test;
 	
 	test.add("test1", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SECURITY);
-	test.add("test2", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SOFTWARE);
+	test.add("test2", "test", "test", "John1989@gm ail.com", 20, 50, 50, 50, SOFTWARE);
 	test.add("test3", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SOFTWARE);
 	test.add("test4", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, NETWORKING);
 	test.add("test5", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SECURITY);
 	
-	test.printAll();
+	
+
+	test.printDaysInCourse("test2");
+	
+
 	return 0;
 }
 
@@ -51,7 +55,7 @@ void Roster::remove(string studentID) {
 	for (int i = 0; i < 5; i++) {
 		if (classRosterArray[i] != NULL && studentID == classRosterArray[i]->getStudentID()) {
 			idExist = true;
-			classRosterArray[i] = nullptr;
+			classRosterArray[i] = NULL;
 		}
 	}
 	if (!idExist) {
@@ -61,6 +65,25 @@ void Roster::remove(string studentID) {
 
 void Roster::printAll() {
 	for (int i = 0; i < 5; i++) {
-		classRosterArray[i]->print();
+		if (classRosterArray[i] != NULL) {
+			classRosterArray[i]->print();
+		}
+		
+	}
+}
+void Roster::printDaysInCourse(string studentID) {
+	bool idExist = false;
+	double total = 0.0;
+	for (int i = 0; i < 5; i++) {
+		if (classRosterArray[i] != NULL && studentID == classRosterArray[i]->getStudentID()) {
+			for (int j = 0; j < 3; j++) {
+				total = total + classRosterArray[i]->getDaysToComplete()[j];
+			}
+			cout << studentID << " average days in class: " << (total / 3) << " days";
+			idExist = true;
+		}
+	}
+	if (!idExist) {
+		cout << "Student ID was not found.";
 	}
 }

@@ -12,8 +12,8 @@ public:
 	void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degreeType);
 	void remove(string studentID);
 	void printAll();
+	void printDaysInCourse(string studentID);
 	//void printByDegreeProgram(int degreeProgram);
-	//void printDaysInCourse(string studentID);
 	//void printInvalidEmails();
 	//
 	//~Roster();

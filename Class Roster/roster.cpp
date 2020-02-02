@@ -15,18 +15,18 @@ int main() {
 	"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
 	"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
 	"A5,Issam,Ahmed,iahme11@wgu.edu,31,31,29,30,SOFTWARE"};
+	/*
 	Roster test;
-	
 	test.add("test1", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SECURITY);
-	test.add("test2", "test", "test", "John1989@gm ail.com", 20, 50, 50, 50, SOFTWARE);
-	test.add("test3", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SOFTWARE);
-	test.add("test4", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, NETWORKING);
-	test.add("test5", "test", "test", "John1989@gm ail.com", 20, 30, 35, 40, SECURITY);
+	test.add("test2", "test", "test", "Erickson_1990@gmailcom", 20, 50, 50, 50, SOFTWARE);
+	test.add("test3", "test", "test", "The_lawyer99yahoo.com", 20, 30, 35, 40, SOFTWARE);
+	test.add("test4", "test", "test", "Erin.black@comcast.net", 20, 30, 35, 40, NETWORKING);
+	test.add("test5", "test", "test", "iahme11@wgu.edu", 20, 30, 35, 40, SECURITY);
 	
-	
+	test.printInvalidEmails();
+	*/
 
 
-	test.printByDegreeProgram(2);
 	
 
 	return 0;
@@ -92,9 +92,19 @@ void Roster::printDaysInCourse(string studentID) {
 
 void Roster::printInvalidEmails() {
 	for (int i = 0; i < 5; i++) {
-		bool valid = true;
+		bool valid = false;
 		string curEmail = classRosterArray[i]->getEmailAddress();
+		if (curEmail.find(" ") == string::npos) {
+			if (curEmail.find("@") != string::npos) {
+				if (curEmail.find(".") != string::npos) {
+					valid = true;
+				}
+			}
+		}
 
+		if (!valid) {
+			cout << classRosterArray[i]->getStudentID() << " email " << curEmail << " is invalid.\n";
+		}
 
 	}
 }

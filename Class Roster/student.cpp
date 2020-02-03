@@ -1,19 +1,26 @@
+/*
+C867 Performance Assessment
+Issam Ahmed
+000846138
+2/2/2020
+*/
 #include <iostream>
 #include <string>
 #include "student.h"
+
 using namespace std;
 
 //contstuctor
-Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int inDaysToComplete[3], Degree degreeType) {
-	this->studentID = studentID;
-	this->firstName = firstName;
-	this->lastName = lastName;
-	this->emailAddress = emailAddress;
-	this->age = age;
+
+Student::Student(string inStudentID, string inFirstName, string inLastName, string inEmailAddress, int inAge, int inDaysToComplete[3]) {
+	studentID = inStudentID;
+	firstName = inFirstName;
+	lastName = inLastName;
+	emailAddress = inEmailAddress;
+	age = inAge;
 	for (int i = 0; i < 3; i++) {
 		daysToComplete[i] = inDaysToComplete[i];
 	}
-	this->degreeType = degreeType;
 }
 
 //deconstructor
@@ -46,9 +53,6 @@ int* Student::getDaysToComplete() {
 	return daysToComplete;
 }
 
-Degree Student::getDegreeType() {
-	return degreeType;
-}
 
 //mutator methods
 void Student::setStudentID(string studentID) {
@@ -77,35 +81,12 @@ void Student::setDaysToComplete(int inDaysToComplete[3]) {
 	}
 }
 
-void Student::setDegreeType(Degree degreeType) {
-	this->degreeType = degreeType;
-}
-
+//print method
 void Student::print() {
 	cout << getStudentID() << "\t";
 	cout << "First Name: " << getFirstName() << "\t";
 	cout << "Last Name: " << getLastName() << "\t";
 	cout << "Age: " << getAge() << "\t";
 	cout << "daysInCourse: {" << getDaysToComplete()[0] << ", " << getDaysToComplete()[1] << ", " << getDaysToComplete()[2] << "}" << "\t";
-	
-	if (getDegreeType() == 0) {
-		cout << "SECURITY\n";
-	}
-	else if (getDegreeType() == 1) {
-		cout << "NETWORKING\n";
-	}
-	else if (getDegreeType() == 2) {
-		cout << "SOFTWARE\n";
-	}
 }
 
-Degree Student::getDegreeProgram() {
-	return Degree();
-}
-/*
-int main() {
-	int test[3] = { 1,2,3 };
-	Student t1("A1", "John", "Smith", "John1989@gm ail.com", 22, test, SECURITY);
-	return 0;
-}
-*/

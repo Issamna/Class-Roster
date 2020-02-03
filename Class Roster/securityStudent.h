@@ -1,3 +1,9 @@
+/*
+C867 Performance Assessment
+Issam Ahmed
+000846138
+2/2/2020
+*/
 #ifndef SECURITYSTUDENT_H
 #define SECURITYSTUDENT_H
 
@@ -9,9 +15,8 @@ using namespace std;
 class securityStudent : public Student {
 public:
 	using Student::Student;
-	virtual Degree getDegreeProgram();
-	
-	
+	Degree getDegreeProgram();
+	void print();
 
 private:
 	Degree degreeType = SECURITY;

@@ -1,3 +1,9 @@
+/*
+C867 Performance Assessment
+Issam Ahmed
+000846138
+2/2/2020
+*/
 #ifndef STUDENT_H
 #define STUDENT_H
 
@@ -10,7 +16,7 @@ using namespace std;
 class Student {
 public:
 	//constructor
-	Student(string studentID, string firstName, string lastName, string emailAddress, int age, int inDaysToComplete[3], Degree degreeType);
+	Student(string, string, string, string, int, int*);
 	//deconstructor
 	~Student();
 	//accessor methods
@@ -20,7 +26,6 @@ public:
 	string getEmailAddress() const;
 	int getAge() const;
 	int* getDaysToComplete();
-	Degree getDegreeType();
 	//mutator methods
 	void setStudentID(string studentID);
 	void setFirstName(string firstName);
@@ -28,10 +33,9 @@ public:
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
 	void setDaysToComplete(int inDaysToComplete[3]);
-	void setDegreeType(Degree degreeType);
 	//other required methods
 	virtual void print();
-	virtual Degree getDegreeProgram();
+	virtual Degree getDegreeProgram() = 0;
 
 protected:
 	string studentID;
@@ -40,7 +44,6 @@ protected:
 	string emailAddress;
 	int age;
 	int daysToComplete[3];
-	Degree degreeType;
 };
 
 

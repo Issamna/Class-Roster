@@ -44,10 +44,10 @@
     <ClCompile Include="securityStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="softareStudent.cpp">
+    <ClCompile Include="student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="student.cpp">
+    <ClCompile Include="softwareStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

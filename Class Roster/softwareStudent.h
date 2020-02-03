@@ -1,6 +1,6 @@
 #pragma once
-#ifndef SOFTARESTUDENT_H
-#define SOFTARESTUDENT_H
+#ifndef SOFTWARESTUDENT_H
+#define SOFTWARESTUDENT_H
 
 #include <iostream>
 #include <string>
@@ -9,7 +9,8 @@
 class softwareStudent : public Student {
 public:
 	using Student::Student;
-	virtual Degree getDegreeProgram();
+	Degree getDegreeProgram();
+	void print();
 
 private:
 	Degree degreeType = SOFTWARE;

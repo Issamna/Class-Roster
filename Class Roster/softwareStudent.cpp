@@ -6,20 +6,20 @@ Issam Ahmed
 */
 #include <iostream>
 #include <string>
-#include "securityStudent.h"
+#include "softwareStudent.h"
 using namespace std;
 
 //accessor method
-Degree securityStudent::getDegreeProgram() {
+Degree softwareStudent::getDegreeProgram() {
 	return degreeType;
 }
 
 //print method
-void securityStudent::print() {
+void softwareStudent::print() {
 	cout << getStudentID() << "\t";
 	cout << "First Name: " << getFirstName() << "\t";
 	cout << "Last Name: " << getLastName() << "\t";
 	cout << "Age: " << getAge() << "\t\t";
 	cout << "daysInCourse: {" << getDaysToComplete()[0] << ", " << getDaysToComplete()[1] << ", " << getDaysToComplete()[2] << "}" << "\t";
-	cout << "Degree Type: SECURITY" << endl;
+	cout << "Degree Type: SOFTWARE" << endl;
 }

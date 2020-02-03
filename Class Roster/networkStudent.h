@@ -1,4 +1,10 @@
-#pragma once
+/*
+C867 Performance Assessment
+Issam Ahmed
+000846138
+2/2/2020
+*/
+
 #ifndef NETWORKSTUDENT_H
 #define NETWORKSTUDENT_H
 
@@ -9,8 +15,8 @@
 class networkStudent : public Student {
 public:
 	using Student::Student;
-	virtual Degree getDegreeProgram();
-
+	Degree getDegreeProgram();
+	void print();
 private:
 	Degree degreeType = NETWORKING;
 };
